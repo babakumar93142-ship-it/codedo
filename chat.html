@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeGuru — Friends & Chat</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span>&gt;_</span> CodeGuru<span class="caret"></span></div>
+  <div class="nav">
+    <a href="index.html">Browse</a>
+  </div>
+</div>
+
+<div class="container" id="gate" style="display:none;text-align:center;padding-top:80px">
+  <p class="section-title">Sign in to chat with friends</p>
+  <button class="btn" id="gateBtn">Sign in with Google</button>
+</div>
+
+<div class="container">
+  <div class="toolbar">
+    <input id="friendSearch" type="text" placeholder="Search by email and press Enter to add friend...">
+  </div>
+  <div id="searchResults" style="margin-bottom:16px"></div>
+  <div id="requestsBox" style="margin-bottom:16px"></div>
+
+  <div class="chat-wrap" id="chatWrap" style="display:none">
+    <div class="friend-list" id="friendList"></div>
+    <div class="chat-panel">
+      <div style="padding:12px;border-bottom:1px solid var(--border);color:var(--green)" id="chatHeader">
+        Select a friend
+      </div>
+      <div class="chat-msgs" id="chatMsgs"></div>
+      <div class="chat-input">
+        <input id="chatInput" type="text" placeholder="Type a message..." disabled>
+        <button class="btn" id="sendBtn" disabled>Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/chat.js"></script>
+</body>
+</html>
