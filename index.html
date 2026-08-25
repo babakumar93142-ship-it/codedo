@@ -91,9 +91,10 @@
         <label>Code</label>
         <textarea id="f_code" placeholder="Paste your code here..." required></textarea>
       </div>
+      <div id="compileError" style="display:none;margin-bottom:14px"></div>
       <div class="modal-actions">
         <button type="button" class="btn ghost" id="cancelUpload" onclick="document.getElementById('uploadModal').classList.remove('show')">Cancel</button>
-        <button type="submit" class="btn">Publish</button>
+        <button type="submit" class="btn" id="publishBtn">Publish</button>
       </div>
     </form>
   </div>
