@@ -1,4 +1,14 @@
 /* ===== CodeGuru — hacker theme (black / green / white) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+
+@font-face{
+  font-family:'Coolvetica';
+  src: url('fonts/Coolvetica_Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root{
   --bg:#0a0d0a;
   --bg-panel:#0f140f;
@@ -9,7 +19,9 @@
   --muted:#7d9385;
   --danger:#ff4d4d;
   --radius:6px;
-  --mono:'JetBrains Mono','Fira Code',Consolas,monospace;
+  --heading:'Coolvetica','Poppins',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'Fira Code','JetBrains Mono',Consolas,monospace;
 }
 
 *{box-sizing:border-box}
@@ -18,13 +30,26 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--white);
-  font-family:var(--mono);
+  font-family:var(--body);
   min-height:100vh;
   background-image:
     linear-gradient(rgba(57,255,136,0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(57,255,136,0.035) 1px, transparent 1px);
   background-size: 28px 28px;
+  animation: gridMove 18s linear infinite;
 }
+
+@keyframes gridMove{
+  from{ background-position: 0 0; }
+  to{ background-position: 28px 28px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body{ animation: none; }
+}
+
+h1,h2,h3,.brand,.card-head h3,.hero h1{ font-family: var(--heading); }
+pre, textarea, .msg, code{ font-family: var(--mono); }
 
 ::selection{background:var(--green);color:#000}
 
@@ -46,7 +71,7 @@ a:hover{text-decoration:underline}
 .nav a:hover{color:var(--green)}
 
 .btn{
-  font-family:var(--mono);
+  font-family:var(--body);
   background:transparent;
   color:var(--green);
   border:1px solid var(--green-dim);
@@ -79,7 +104,7 @@ a:hover{text-decoration:underline}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
 .toolbar input, .toolbar select{
   background:var(--bg-panel);border:1px solid var(--border);color:var(--white);
-  font-family:var(--mono);padding:9px 12px;border-radius:var(--radius);font-size:13px;
+  font-family:var(--body);padding:9px 12px;border-radius:var(--radius);font-size:13px;
 }
 .toolbar input{flex:1;min-width:200px}
 
@@ -120,11 +145,15 @@ a:hover{text-decoration:underline}
 .modal h2{margin-top:0;color:var(--green);font-size:18px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
-.field input, .field select, .field textarea{
+.field input, .field select{
+  width:100%;background:#050705;border:1px solid var(--border);color:var(--white);
+  font-family:var(--body);padding:10px;border-radius:var(--radius);font-size:13px;
+}
+.field textarea{
   width:100%;background:#050705;border:1px solid var(--border);color:var(--white);
   font-family:var(--mono);padding:10px;border-radius:var(--radius);font-size:13px;
+  min-height:160px;resize:vertical;
 }
-.field textarea{min-height:160px;resize:vertical}
 .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
 .close-x{float:right;cursor:pointer;color:var(--muted);font-size:18px}
 .close-x:hover{color:var(--danger)}
