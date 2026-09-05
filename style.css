@@ -169,6 +169,7 @@ a:hover{color:var(--purple)}
   transition:border-color .2s;
 }
 .toolbar input:focus, .toolbar select:focus{ outline:none; border-color:var(--border-strong); }
+select option{ background:#150f24; color:#f3eefc; }
 .toolbar input{flex:1;min-width:200px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}

@@ -82,7 +82,7 @@ function renderSnippets() {
       <p class="desc">${escapeHtml(s.description || "")}</p>
       <pre id="code-${s.id}">${escapeHtml(s.code)}</pre>
       <div class="card-foot">
-        <span class="author">@${escapeHtml(s.authorName || "anon")}</span>
+        <a href="profile.html?uid=${s.authorId}" class="author">@${escapeHtml(s.authorName || "anon")}</a>
         <button class="btn copy-btn" data-id="${s.id}">Copy</button>
       </div>
     </div>

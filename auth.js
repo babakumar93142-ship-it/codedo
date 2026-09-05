@@ -20,9 +20,13 @@ export async function loginWithGoogle() {
   const existing = await getDoc(userRef);
 
   if (!existing.exists()) {
+    const base = (user.email || "user").split("@")[0].toLowerCase().replace(/[^a-z0-9_]/g, "");
+    const username = `${base}${Math.floor(1000 + Math.random() * 9000)}`;
+
     await setDoc(userRef, {
       uid: user.uid,
       name: user.displayName || "User",
+      username,
       email: user.email,
       photo: user.photoURL || "",
       role: user.email === ADMIN_EMAIL ? "admin" : "user",
