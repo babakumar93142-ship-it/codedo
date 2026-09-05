@@ -1,6 +1,6 @@
-// ===== CodeGuru — snippets (browse / upload / copy) =====
+// ===== CodeDo — snippets (browse / upload / copy) =====
 import { db, auth, watchAuth, loginWithGoogle, logout } from "./auth.js";
-import { testRunCode } from "./piston.js";
+import { testRunCode } from "./checker.js";
 import {
   collection, addDoc, getDocs, query, orderBy, serverTimestamp, deleteDoc, doc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -129,12 +129,13 @@ uploadForm.onsubmit = async (e) => {
 
   compileError.style.display = "none";
 
-  // HTML/CSS don't compile — publish directly.
-  const isCheckable = !["HTML", "CSS"].includes(language);
+  // Only JavaScript and Python can actually be checked in-browser without
+  // a paid backend — everything else publishes directly.
+  const isCheckable = ["JavaScript", "Python"].includes(language);
 
   if (isCheckable) {
     publishBtn.disabled = true;
-    publishBtn.textContent = "Compiling...";
+    publishBtn.textContent = "Checking code...";
     let result;
     try {
       result = await testRunCode(language, code);

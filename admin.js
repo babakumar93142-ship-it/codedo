@@ -1,4 +1,4 @@
-// ===== CodeGuru — Admin panel logic =====
+// ===== CodeDo — Admin panel logic =====
 import { db, watchAuth, loginWithGoogle, logout } from "./auth.js";
 import {
   collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy
