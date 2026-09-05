@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeDo — People</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span>&gt;_</span> CodeDo<span class="caret"></span></div>
+  <div class="nav">
+    <a href="index.html">Browse</a>
+    <a href="chat.html">Friends & Chat</a>
+    <a href="people.html">People</a>
+    <button class="btn ghost" id="loginBtn">Sign in with Google</button>
+    <div id="userBox" style="display:none;align-items:center;gap:8px"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="toolbar">
+    <input id="searchInput" type="text" placeholder="Search by name or username...">
+  </div>
+  <div class="grid" id="peopleGrid"></div>
+</div>
+
+<script type="module" src="js/people.js"></script>
+</body>
+</html>
