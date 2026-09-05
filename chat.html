@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeGuru — Friends & Chat</title>
+<title>CodeDo — Friends & Chat</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div class="topbar">
-  <div class="brand"><span>&gt;_</span> CodeGuru<span class="caret"></span></div>
+  <div class="brand"><span>&gt;_</span> CodeDo<span class="caret"></span></div>
   <div class="nav">
     <a href="index.html">Browse</a>
   </div>
@@ -34,6 +34,10 @@
         Select a friend
       </div>
       <div class="chat-msgs" id="chatMsgs"></div>
+      <div class="reply-bar" id="replyBar" style="display:none">
+        <span class="reply-bar-text" id="replyBarText"></span>
+        <button class="close-x" id="cancelReplyBtn">&times;</button>
+      </div>
       <div class="chat-input">
         <input id="chatInput" type="text" placeholder="Type a message..." disabled>
         <button class="btn" id="sendBtn" disabled>Send</button>

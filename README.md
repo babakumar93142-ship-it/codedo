@@ -1,4 +1,4 @@
-# CodeGuru — Setup Guide (Hinglish)
+# CodeDo — Setup Guide (Hinglish)
 
 Ye website 100% free me chalegi: frontend GitHub Pages pe, backend (login + database) Firebase ke free tier pe.
 
@@ -63,6 +63,7 @@ service cloud.firestore {
       match /messages/{msgId} {
         allow read: if isSignedIn();
         allow create: if isSignedIn() && request.auth.uid == request.resource.data.senderId;
+        allow update: if isSignedIn();
       }
     }
   }
